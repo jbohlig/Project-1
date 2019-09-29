@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spotlight!</title>
+    <!--reset-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/f8020557a2.js"></script>
+    <!--custom style-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--temp font-->
+    <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body class="bg-dark">
+    <!--toggle buttons for interface testing, have to be gone in production-->
+    <!-- <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
+        <button id="toggle_intro" class="btn btn-light" type="button">Toggle intro</button>
+    </div> -->
+
+    <!--------------------------------------INTRO---------------------------------------->
+    <section class="intro pt-5" id="intro">
+        <div class="container text-center pt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3  pt-5">
+                    <h1 class="logo text-center text-light h1">Spotlight!</h1>
+                    <form>
+                        <div class="form-group text-light">
+                            <label for="term">Insert band name to start</label>
+                            <input class="form-control" type="text" id="artist_input"
+                                placeholder="Insert band name to start">
+                        </div>
+                    </form>
+                    <button class="btn btn-primary" id="main_search">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------------------------------END-INTRO---------------------------------------->
+
+    <!--------------------------------------QUERY---------------------------------------->
+    <section class="intro pt-5" id="query" style="display: none">
+        <div class="container text-left pt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3" id="artist_info">
+                        <div class="row no-gutters">
+                            <div class="col-md-4" id="artist_img">
+                                <!--jQuery artist image count goes here-->
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body" id="ar_info">
+
+                                    <!--jQuery artist name count goes here-->
+                                    <!--jQuery fans count goes here-->
+                                    <!--jQuery Facebook link goes here-->
+                                    <!--jQuery BiT link goes here-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-header" id="artist_events_count">
+                            <!--jQuery events count goes here-->
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <th><b>Date</b></th>
+                                    <th><b>Country/Venue</b></th>
+                                    <th><b>Buy Show Tickets</b></th>
+                                    <th><b>Buy Plane Tickets</b></th>
+                                </thead>
+                                <tbody id="table_body">
+                                    <!--upcoming events info comes here-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------------------------------END-QUERY---------------------------------------->
+
+
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Popper, required by Bootstrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!--Bootstrap core-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Firebase Core -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <!-- Firebase Dataase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!--Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Helper JS-->
+    <script src="assets/js/helper.js"></script>
+    <!--bands in town-->
+    <script src="assets/js/bandsintown.js"></script>
+    <!--Main JS-->
+    <!-- <script src="assets/js/app.js"></script> -->
+
+</body>
+
+</html>
