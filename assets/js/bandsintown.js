@@ -1,8 +1,5 @@
-import lastFm from './lastfm.js';
+export {searchBandsInTown, searchBandsInTownVenue};
 
-$(document).ready(function () {
-
-  
   function searchBandsInTown(artist) {
     let queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=13722599"
     $.ajax({
@@ -39,13 +36,13 @@ $(document).ready(function () {
       let artistFansCount = $("<p>");
       artistFansCount.addClass("card-text");
       //only if we have more than 0
-     /*  if (response.tracker_count > 0) {
-        artistFansCount.html("Fans: " + response.tracker_count);
-      }
-      //and if we don't we make a sad face!
-      else {
-        artistFansCount.text("Geez! this artist doesn't have any fans! :(")
-      } */
+      /*  if (response.tracker_count > 0) {
+         artistFansCount.html("Fans: " + response.tracker_count);
+       }
+       //and if we don't we make a sad face!
+       else {
+         artistFansCount.text("Geez! this artist doesn't have any fans! :(")
+       } */
       $("#ar_info").append(artistFansCount);
 
       //show facebook link only if link is not empty
@@ -116,7 +113,7 @@ $(document).ready(function () {
         let countryData = response[i].venue.country.split(" ").join("-");
         let buyTicket = $("<a>");
 
-        
+
         tdDate.text(response[i].datetime);
 
 
@@ -138,55 +135,24 @@ $(document).ready(function () {
         btnPlaneTickets.text("Plan Your Trip");
 
         //button buy tickets
-        if (response[i].offers.length !== 0){
-        buyTicket.attr("href", response[i].offers[0].url)
-        buyTicket.attr("target", "_blank")
-        buyTicket.addClass("btn btn-success text-white");
-        buyTicket.text("Buy Show Tickets");
-        tdTicket.append(buyTicket);
+        if (response[i].offers.length !== 0) {
+          buyTicket.attr("href", response[i].offers[0].url)
+          buyTicket.attr("target", "_blank")
+          buyTicket.addClass("btn btn-success text-white");
+          buyTicket.text("Buy Show Tickets");
+          tdTicket.append(buyTicket);
         }
         else {
           tdTicket.text("No service available")
         }
 
         tdVenue.html(`${response[i].venue.city}, ${response[i].venue.country}<br> ${response[i].venue.name}`);
-        
+
       }
-      
+
     })
   }
-  //main search button, insert name, get all the info
-  $("#main_search").on("click", function (event) {
-    event.preventDefault();
-    let artist = $("#artist_input").val().trim();
-
-    let artistL = artist.split(" ").join("+");
-        //let countryData = response[i].venue.country.split(" ").join("-");
-
-    $("#intro").fadeOut("slow", function () {
-      //starting both functions, starting simultaneasly both queries
-      searchBandsInTown(artistL);
-      searchBandsInTownVenue(artistL);
-      lastFm(artistL);
-    });
-  });
-
-  //click on any of Plan Your Trip buttons will show you the screen, with city and country we gotta go.
-  //at that point hotel and plaint tickets apis are coming in
-  $("body").on("click", ".go-trip", function (event) {
-    event.preventDefault();
-    //passing names of city and country to the next screen
-    let country = $(this).attr("data-country");
-    let city = $(this).attr("data-city");
-    $("#city_name").text(city);
-    $("#country_name").text(country);
-    $("#query").fadeOut("slow");
-    $("#trip").show();
-
-
-  })
 
 
 
 
-})
