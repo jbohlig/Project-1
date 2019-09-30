@@ -5,6 +5,12 @@ $("#toggle_intro").on("click", function() {
     $("#intro").toggle();
 })
 
+$("#toggle_trip").on("click", function() {
+    event.preventDefault();
+    $("#intro").hide();
+    $("#trip").toggle();
+})
+
 
 
   

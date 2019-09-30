@@ -24,9 +24,10 @@
 
 <body class="bg-dark">
     <!--toggle buttons for interface testing, have to be gone in production-->
-    <!-- <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
+    <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
         <button id="toggle_intro" class="btn btn-light" type="button">Toggle intro</button>
-    </div> -->
+        <button id="toggle_trip" class="btn btn-light" type="button">Toggle Trip Planner</button>
+    </div>
 
     <!--------------------------------------INTRO---------------------------------------->
     <section class="intro pt-5" id="intro">
@@ -36,12 +37,13 @@
                     <h1 class="logo text-center text-light h1">Spotlight!</h1>
                     <form>
                         <div class="form-group text-light">
-                            <label for="term">Insert band name to start</label>
+                            <label for="artist_input">Insert band name to start</label>
                             <input class="form-control" type="text" id="artist_input"
                                 placeholder="Insert band name to start">
                         </div>
+                        <input class="btn btn-primary" id="main_search" type="submit" value="Search">
                     </form>
-                    <button class="btn btn-primary" id="main_search">Search</button>
+
                 </div>
             </div>
         </div>
@@ -59,10 +61,19 @@
                                 <!--jQuery artist image count goes here-->
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body" id="ar_info">
+                                <div class="card-header" id="ar_name">
 
                                     <!--jQuery artist name count goes here-->
-                                    <!--jQuery fans count goes here-->
+
+                                </div>
+                                <div class="card-body" id="ar_info">
+
+
+                                    <!--jQuery Facebook link goes here-->
+                                    <!--jQuery BiT link goes here-->
+                                </div>
+                                <div class="card-footer" id="ar_socials">
+
                                     <!--jQuery Facebook link goes here-->
                                     <!--jQuery BiT link goes here-->
                                 </div>
@@ -98,6 +109,55 @@
     </section>
     <!----------------------------------END-QUERY---------------------------------------->
 
+    <!--------------------------------------QUERY---------------------------------------->
+
+    <!--have no idea how this is gonna be, just a placeholder for now-->
+    <section class="intro pt-5" id="trip" style="display: none">
+        <div class="container text-left pt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3" id="trip_info">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 p-4" id="">
+                                <h3>We are going to:</h3>
+                                <h5><span id="country_name"></span>, <span id="city_name"></span></h5>
+
+
+
+
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body" id="ar_info">
+                                    <div class="p-3">
+                                        <button class="">Buy Plane tickets </button>
+                                        <button class="">Book Hotel </button>
+                                    </div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nam dolores dolor ipsa
+                                    pariatur, perferendis enim nesciunt, nobis accusamus nulla nostrum officiis ullam
+                                    labore
+                                    animi! Doloribus nisi voluptatibus optio velit. Explicabo, atque quibusdam fugiat
+                                    veniam
+                                    a incidunt maiores quod repellat quidem, tempore quo deserunt perspiciatis natus
+                                    assumenda. Soluta porro beatae suscipit, minus enim rerum, animi iusto asperiores
+                                    laboriosam eum vero, molestiae expedita labore exercitationem quisquam! Unde eaque
+                                    vero
+                                    quibusdam culpa qui provident voluptate aliquam, sint praesentium cupiditate
+                                    dolorum.
+                                    Aut, nam! Voluptas facilis quidem ut itaque fuga illum veniam. Beatae magni maiores
+                                    odio
+                                    perferendis reprehenderit perspiciatis fuga sed doloremque odit nulla!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!----------------------------------END-QUERY---------------------------------------->
+
 
 
     <!-- jQuery-->
@@ -120,7 +180,8 @@
     <!--Helper JS-->
     <script src="assets/js/helper.js"></script>
     <!--bands in town-->
-    <script src="assets/js/bandsintown.js"></script>
+    <script src="assets/js/bandsintown.js" type="module"></script>
+
     <!--Main JS-->
     <!-- <script src="assets/js/app.js"></script> -->
 

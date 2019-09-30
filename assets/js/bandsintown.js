@@ -1,10 +1,15 @@
+import lastFm from './lastfm.js';
+
 $(document).ready(function () {
+
+  
   function searchBandsInTown(artist) {
     let queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=13722599"
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      console.log(queryURL)
       /*  
       ---------------------------------
       need to handle the animation here
@@ -19,8 +24,8 @@ $(document).ready(function () {
       $("#artist_img").append(artistImg);
 
       //generating name
-      let artistName = $("<h5>");
-      artistName.addClass("card-title");
+      let artistName = $("<div>");
+      artistName.addClass("card-title h1");
       if (response) {
         artistName.text(response.name)
       }
@@ -28,37 +33,37 @@ $(document).ready(function () {
         artistName.text("Sorry, we don't know who is that!")
       }
 
-      $("#ar_info").append(artistName);
+      $("#ar_name").prepend(artistName);
 
       //displaying artist's fans
       let artistFansCount = $("<p>");
       artistFansCount.addClass("card-text");
       //only if we have more than 0
-      if (response.tracker_count > 0) {
+     /*  if (response.tracker_count > 0) {
         artistFansCount.html("Fans: " + response.tracker_count);
       }
       //and if we don't we make a sad face!
       else {
         artistFansCount.text("Geez! this artist doesn't have any fans! :(")
-      }
+      } */
       $("#ar_info").append(artistFansCount);
 
       //show facebook link only if link is not empty
       if (response.facebook_page_url !== "") {
         let artistFacebook = $("<p>");
-        $("#ar_info").append(artistFacebook);
+        $("#ar_socials").append(artistFacebook);
         artistFacebook.addClass("card-text");
         let artistFacebookLink = $("<a>");
         artistFacebook.append(artistFacebookLink);
         artistFacebookLink.attr("href", response.facebook_page_url);
         artistFacebookLink.attr("target", "_blank")
-        artistFacebookLink.text("Facebook Page")
+        artistFacebookLink.text("Profile on Facebook")
       }
 
       //show bandsintown link only if link is not empty
       if (response.url !== "") {
         let artistBIT = $("<p>");
-        $("#ar_info").append(artistBIT);
+        $("#ar_socials").append(artistBIT);
         artistBIT.addClass("card-text");
         let artistBITLink = $("<a>");
         artistBIT.append(artistBITLink);
@@ -97,52 +102,91 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      console.log(queryURL)
       for (let i = 0; i < response.length; i++) {
+
+        //creating rows and variables
         let tableRow = $("<tr>");
-        tableRow.attr("class", "venues");
         let tdDate = $("<td>");
         let tdVenue = $("<td>");
         let tdTicket = $("<td>");
         let tdPlaneTicket = $("<td>");
-        tdPlaneTicket.attr("class", "ready_to_fly");
-
+        //here is how we save and pass city and country to the next screen
         let cityData = response[i].venue.city.split(" ").join("-");
         let countryData = response[i].venue.country.split(" ").join("-");
-        tdPlaneTicket.attr("data-city", cityData);
-        tdPlaneTicket.attr("data-country", countryData);
-
         let buyTicket = $("<a>");
+
+        
+        tdDate.text(response[i].datetime);
+
+
+
+        tableRow.attr("class", "venues");
+        tdPlaneTicket.attr("class", "ready_to_fly");
         $("#table_body").prepend(tableRow);
         tableRow.append(tdDate);
         tableRow.append(tdVenue);
         tableRow.append(tdTicket);
         tableRow.append(tdPlaneTicket);
+
+        //button plan your trip
         let btnPlaneTickets = $("<button>");
         tdPlaneTicket.append(btnPlaneTickets);
-        btnPlaneTickets.attr("class", "btn btn-primary");
+        btnPlaneTickets.attr("class", "btn btn-primary go-trip");
         btnPlaneTickets.attr("data-city", cityData);
         btnPlaneTickets.attr("data-country", countryData);
         btnPlaneTickets.text("Plan Your Trip");
+
+        //button buy tickets
+        if (response[i].offers.length !== 0){
         buyTicket.attr("href", response[i].offers[0].url)
         buyTicket.attr("target", "_blank")
         buyTicket.addClass("btn btn-success text-white");
         buyTicket.text("Buy Show Tickets");
-        tdDate.text(response[i].datetime);
-        tdVenue.html(`${response[i].venue.city}, ${response[i].venue.country}<br> ${response[i].venue.name}<br>${response[i].offers[0].status}`);
-        tdTicket.append(buyTicket)
+        tdTicket.append(buyTicket);
+        }
+        else {
+          tdTicket.text("No service available")
+        }
+
+        tdVenue.html(`${response[i].venue.city}, ${response[i].venue.country}<br> ${response[i].venue.name}`);
+        
       }
+      
     })
   }
-
+  //main search button, insert name, get all the info
   $("#main_search").on("click", function (event) {
     event.preventDefault();
     let artist = $("#artist_input").val().trim();
-    $("#intro").fadeOut("slow", function () {
 
-      searchBandsInTown(artist);
-      searchBandsInTownVenue(artist);
+    let artistL = artist.split(" ").join("+");
+        //let countryData = response[i].venue.country.split(" ").join("-");
+
+    $("#intro").fadeOut("slow", function () {
+      //starting both functions, starting simultaneasly both queries
+      searchBandsInTown(artistL);
+      searchBandsInTownVenue(artistL);
+      lastFm(artistL);
     });
   });
+
+  //click on any of Plan Your Trip buttons will show you the screen, with city and country we gotta go.
+  //at that point hotel and plaint tickets apis are coming in
+  $("body").on("click", ".go-trip", function (event) {
+    event.preventDefault();
+    //passing names of city and country to the next screen
+    let country = $(this).attr("data-country");
+    let city = $(this).attr("data-city");
+    $("#city_name").text(city);
+    $("#country_name").text(country);
+    $("#query").fadeOut("slow");
+    $("#trip").show();
+
+
+  })
+
+
 
 
 })
