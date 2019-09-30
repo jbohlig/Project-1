@@ -5,8 +5,6 @@
 
 #### Group Project 1 of 3 for University of Arizona Cooding Bootcamp
 #### Team Name:  *House Stark*
----
-
 
 #### Members:
 * John Bohlig - Team Leader
