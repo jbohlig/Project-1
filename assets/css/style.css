@@ -1,0 +1,27 @@
+
+
+section {
+    min-height: 100vh;
+    background: rgba(86,61,124,.15) url("../images/temp-bg.jpg") no-repeat top center;
+    background-size: cover;
+}
+
+.logo {
+    font-family: 'Faster One', cursive;
+}
+
+.hidden {
+    display: none!important;
+}
+.card-footer{
+    height: 100%;
+}
+
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
