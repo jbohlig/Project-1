@@ -1,17 +1,20 @@
 export {searchBandsInTown, searchBandsInTownVenue};
 
   function searchBandsInTown(artist) {
+    
     let queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=13722599"
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      $("#navbar").show()
       console.log(queryURL)
       /*  
       ---------------------------------
       need to handle the animation here
       ---------------------------------
       */
+     
       $("#query").show();
 
       //generating image

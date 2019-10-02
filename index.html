@@ -23,17 +23,20 @@
 </head>
 
 <body class="bg-dark">
+    <video id="myVideo" autoplay="true" loop="true" class="video-mainpage" muted plays-inline>
+        <source src="assets/video/video-6s.webm" type="video/webm">
+        <source src="assets/video/video-6s.mp4" type="video/mp4">
+    </video>
     <!--toggle buttons for interface testing, have to be gone in production-->
-   <!--  <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
+    <!--  <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
         <button id="toggle_intro" class="btn btn-light" type="button">Toggle intro</button>
         <button id="toggle_trip" class="btn btn-light" type="button">Toggle Trip Planner</button>
     </div> -->
 
+
     <!--------------------------------------INTRO---------------------------------------->
     <section class="intro pt-5" id="intro">
-            <video id="myVideo" autoplay="true" loop="true" class="video-mainpage" muted plays-inline>
-                    <source src="assets/sounds/Live-Music.mp4" type="video/mp4">
-                </video>
+
         <div class="container text-center pt-5">
             <div class="row">
                 <div class="col-md-6 offset-md-3  pt-5">
@@ -51,10 +54,54 @@
         </div>
     </section>
     <!----------------------------------END-INTRO---------------------------------------->
+    <!--------------------------------------NAVBAR--------------------------------------->
+    <div class="container" id="navbar" style="display: none">
+        <nav class="navbar navbar-dark navbar-expand-lg  dark-opacity-05 justify-content-between mt-md-5 rounded">
+            <a class="navbar-brand" href="index.html">
+                <h1 class="logo text-center text-light h1">Spotlight!</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2"  id="artist_input_navbar" type="search" placeholder="Insert band name to start">
+                    <input class="btn btn-primary" id="navbar_search" type="submit" value="Search">
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!--------------------------------------/NAVBAR-------------------------------------->
     <!--------------------------------------QUERY---------------------------------------->
+
     <section class="intro pt-5" id="query" style="display: none">
-        <div class="container text-left pt-5">
+        <div class="container text-left pt-2">
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-3" id="artist_info">
@@ -66,7 +113,6 @@
                                 <div class="card-header" id="ar_name">
 
                                     <!--jQuery artist name count goes here-->
-
                                 </div>
                                 <div class="card-body" id="ar_info">
 

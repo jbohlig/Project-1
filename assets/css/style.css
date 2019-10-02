@@ -1,8 +1,6 @@
-
-
 section {
     min-height: 100vh;
-    background: rgba(86,61,124,.15) url("../images/temp-bg.jpg") no-repeat top center;
+    background: rgba(86,61,124,.15) url("../images/live-music.jpg") no-repeat top center;
     background-size: cover;
 }
 
@@ -24,3 +22,9 @@ section {
     min-width: 100%;
     min-height: 100%;
   }
+
+.dark-opacity-05 {
+    background: rgba(0, 0, 0, 0.5)
+}
+
+
