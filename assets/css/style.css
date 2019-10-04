@@ -1,18 +1,8 @@
 section {
     min-height: 100vh;
-    background: rgba(86,61,124,.15) url("../images/live-music.jpg") no-repeat top center;
+    background: rgba(57, 57, 58, 0.15) url("../images/live-music.jpg") no-repeat top center;
     background-size: cover;
-}
-
-.logo {
-    font-family: 'Faster One', cursive;
-}
-
-.hidden {
-    display: none!important;
-}
-.card-footer{
-    height: 100%;
+    opacity: 1;
 }
 
 #myVideo {
@@ -21,10 +11,74 @@ section {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-  }
+}
 
 .dark-opacity-05 {
     background: rgba(0, 0, 0, 0.5)
 }
 
+#logo1 {
+    font-family: 'Monoton', cursive;
+    letter-spacing: .1em;
+    font-size: 74px;
+    width: 550px;
+    -webkit-animation: fadein 3s;
+    -moz-animation: fadein 3s;
+    -ms-animation: fadein 3s;
+    -o-animation: fadein 3s;
+    animation: fadein 3s;
+}
+
+#logo2 {
+    font-size: 72px;
+    opacity: .8;
+}
+
+#logo3 {
+    font-size: 40px;
+    font-family: 'Monoton', cursive;
+}
+
+#logo4{
+opacity: .8;
+}
+
+#searchcontainer{
+    opacity: .9;
+}
+
+#upcomingevents{
+    opacity: .9;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.card-footer {
+    height: 100%;
+}
+
+#artist_input {
+    font-size: 32px;
+    padding: 30px;
+    text-align: center;
+}
+
+#artist_input_navbar {
+    width: 300px;
+}
+
+#ticket-header, #artist-header {
+    opacity: .9;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
