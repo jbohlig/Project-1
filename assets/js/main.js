@@ -49,8 +49,10 @@ $(document).ready(function () {
     //passing names of city and country to the next screen
     let country = $(this).attr("data-country");
     let city = $(this).attr("data-city");
+    let eventDate = $(this).attr("data-date");
     $("#city_name").text(city);
     $("#country_name").text(country);
+    $("#event_date").text(eventDate);
     $("#query").fadeOut("slow");
     $("#trip").show();
   })
