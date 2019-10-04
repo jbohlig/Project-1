@@ -135,6 +135,7 @@ function searchBandsInTownVenue(artist) {
       tdPlaneTicket.append(btnPlaneTickets);
       btnPlaneTickets.attr("class", "btn btn-primary go-trip");
       btnPlaneTickets.attr("data-city", cityData);
+      btnPlaneTickets.attr("data-date", response[i].datetime);
       btnPlaneTickets.attr("data-country", countryData);
       btnPlaneTickets.text("Plan Your Trip");
 
