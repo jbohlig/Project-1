@@ -23,20 +23,27 @@
 
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark" id="main">
+
+
+
     <video id="myVideo" autoplay="true" loop="true" class="video-mainpage" muted plays-inline>
         <source src="assets/video/video-6s.webm" type="video/webm">
         <source src="assets/video/video-6s.mp4" type="video/mp4">
     </video>
     <!--toggle buttons for interface testing, have to be gone in production-->
     <!--  <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
-        <button id="toggle_intro" class="btn btn-light" type="button">Toggle intro</button>
-        <button id="toggle_trip" class="btn btn-light" type="button">Toggle Trip Planner</button>
-    </div> -->
+            <button id="toggle_intro" class="btn btn-light" type="button">Toggle intro</button>
+            <button id="toggle_trip" class="btn btn-light" type="button">Toggle Trip Planner</button>
+        </div> -->
 
 
     <!--------------------------------------INTRO---------------------------------------->
+
+
+
     <section class="intro pt-5" id="intro">
+
 
         <div class="container text-center pt-5">
             <div class="row">
@@ -54,7 +61,13 @@
                 </div>
             </div>
         </div>
+        <div class="cursor-box" id="spotlight">
+            <div class="cursor-box-child" id="spotlight-child">
+            </div>
+
+        </div>
     </section>
+
     <!----------------------------------END-INTRO---------------------------------------->
     <!--------------------------------------NAVBAR--------------------------------------->
     <div class="container" id="navbar" style="display: none">
@@ -185,10 +198,10 @@
                                                     placeholder="Where are you flying from?">
                                             </div>
                                             <div class="form-group">
-                                                    <label for="origin1">To</label>
-                                                    <input type="text" class="form-control" id="destination1"
-                                                        placeholder="" readonly>
-                                                </div>
+                                                <label for="origin1">To</label>
+                                                <input type="text" class="form-control" id="destination1" placeholder=""
+                                                    readonly>
+                                            </div>
 
                                         </form>
                                         <button class="btn btn-primary" id="pln_tkts">Buy Plane tickets </button>
@@ -233,6 +246,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!--Helper JS-->
     <script src="assets/js/helper.js"></script>
+    <!-- Spotlight js -->
+    <script src="assets/js/spotlight.js"></script>
     <!--Main JS-->
     <script src="assets/js/main.js" type="module"></script>
     <!--Hotel API-->
