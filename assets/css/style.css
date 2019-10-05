@@ -39,15 +39,15 @@ section {
     font-family: 'Monoton', cursive;
 }
 
-#logo4{
-opacity: .8;
+#logo4 {
+    opacity: .8;
 }
 
-#searchcontainer{
+#searchcontainer {
     opacity: .9;
 }
 
-#upcomingevents{
+#upcomingevents {
     opacity: .9;
 }
 
@@ -81,4 +81,3 @@ opacity: .8;
         opacity: 1;
     }
 }
-
