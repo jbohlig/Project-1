@@ -4,6 +4,8 @@ import lastFm from './lastfm.js';
 import { searchBandsInTown, searchBandsInTownVenue } from './bandsintown.js';
 import { getApCode, settingsFlight } from './kajak.js';
 
+
+
 $(document).ready(function () {
 
   //main search button, insert name, get all the info
@@ -17,6 +19,7 @@ $(document).ready(function () {
       searchBandsInTownVenue(artistL);
       lastFm(artistL);
       $("#artist_input").val("")
+      
     });
   });
 
@@ -62,4 +65,9 @@ $(document).ready(function () {
     let cityName = $("#city_name").text();
     getApCode(cityName);
   })
+
+
+
+
+
 })
