@@ -41,7 +41,8 @@
         <div class="container text-center pt-5">
             <div class="row">
                 <div class="col-md-6 offset-md-3  pt-5">
-                    <h1 id="logo1" class="logo text-center text-light h1"><i id="logo2" class="fas fa-sliders-h"></i> SpotlighT</h1>
+                    <h1 id="logo1" class="logo text-center text-light h1"><i id="logo2" class="fas fa-sliders-h"></i>
+                        SpotlighT</h1>
                     <form>
                         <div class="form-group text-light">
                             <label for="artist_input"></label>
@@ -59,7 +60,8 @@
     <div class="container" id="navbar" style="display: none">
         <nav class="navbar navbar-dark navbar-expand-lg  dark-opacity-05 justify-content-between mt-md-5 rounded">
             <a class="navbar-brand" href="index.html">
-                <h1 id="logo3" class="logo text-center text-light h1"><i id="logo4" class="fas fa-sliders-h"></i> SpotlighT</h1>
+                <h1 id="logo3" class="logo text-center text-light h1"><i id="logo4" class="fas fa-sliders-h"></i>
+                    SpotlighT</h1>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +93,8 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2"  id="artist_input_navbar" type="search" placeholder="Insert band name to start">
+                    <input class="form-control mr-sm-2" id="artist_input_navbar" type="search"
+                        placeholder="Insert band name to start">
                     <input class="btn btn-primary" id="navbar_search" type="submit" value="Search">
                 </form>
             </div>
@@ -170,27 +173,34 @@
                             <div class="col-md-4 p-4" id="">
                                 <h3>We are going to:</h3>
                                 <h5><span id="country_name"></span>, <span id="city_name"></span></h5>
+                                <h5 id="event_date"></h5>
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body" id="ar_info">
+                            <div class="col-md-4">
+                                <div class="card-body" id="ar_info_plane">
                                     <div class="p-3">
-                                        <button class="">Buy Plane tickets </button>
-                                        <button class="">Book Hotel </button>
+                                        <form id="plane_form">
+                                            <div class="form-group">
+                                                <label for="origin1">From</label>
+                                                <input type="text" class="form-control" id="origin1"
+                                                    placeholder="Where are you flying from?">
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="origin1">To</label>
+                                                    <input type="text" class="form-control" id="destination1"
+                                                        placeholder="" readonly>
+                                                </div>
+
+                                        </form>
+                                        <button class="btn btn-primary" id="pln_tkts">Buy Plane tickets </button>
                                     </div>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nam dolores dolor ipsa
-                                    pariatur, perferendis enim nesciunt, nobis accusamus nulla nostrum officiis ullam
-                                    labore
-                                    animi! Doloribus nisi voluptatibus optio velit. Explicabo, atque quibusdam fugiat
-                                    veniam
-                                    a incidunt maiores quod repellat quidem, tempore quo deserunt perspiciatis natus
-                                    assumenda. Soluta porro beatae suscipit, minus enim rerum, animi iusto asperiores
-                                    laboriosam eum vero, molestiae expedita labore exercitationem quisquam! Unde eaque
-                                    vero
-                                    quibusdam culpa qui provident voluptate aliquam, sint praesentium cupiditate
-                                    dolorum.
-                                    Aut, nam! Voluptas facilis quidem ut itaque fuga illum veniam. Beatae magni maiores
-                                    odio
-                                    perferendis reprehenderit perspiciatis fuga sed doloremque odit nulla!
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card-body" id="ar_info_hotel">
+                                    <div class="p-3">
+                                        <button class="btn btn-primary" id="book_htl">Book Hotel </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 
 import lastFm from './lastfm.js';
 import { searchBandsInTown, searchBandsInTownVenue } from './bandsintown.js';
+import { getApCode, settingsFlight } from './kajak.js';
 
 $(document).ready(function () {
 
@@ -28,11 +29,11 @@ $(document).ready(function () {
     $("#ar_socials").empty();
     $("#artist_events_count").empty();
     $("#table_body").empty();
-    
-    
+
+
     let artist = $("#artist_input_navbar").val().trim();
     let artistL = artist.split(" ").join("+");
-   
+
     $("#intro").fadeOut("slow", function () {
       //starting both functions, starting simultaneasly both queries
       searchBandsInTown(artistL);
@@ -49,11 +50,16 @@ $(document).ready(function () {
     //passing names of city and country to the next screen
     let country = $(this).attr("data-country");
     let city = $(this).attr("data-city");
+    let eventDate = $(this).attr("data-date");
     $("#city_name").text(city);
     $("#country_name").text(country);
+    $("#event_date").text(eventDate);
     $("#query").fadeOut("slow");
     $("#trip").show();
   })
 
-
+  $("#pln_tkts").on("click", function () {
+    let cityName = $("#city_name").text();
+    getApCode(cityName);
+  })
 })
