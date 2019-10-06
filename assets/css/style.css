@@ -14,7 +14,15 @@ section {
     min-height: 100%;
 }
 .dark-opacity-05 {
-    background: rgba(0, 0, 0, 0.5)
+    background: #00000050;
+}
+
+.dark-opacity-09 {
+    background: #00000090;
+}
+
+.light-opacity-09 {
+    background: #b7c2cc90;
 }
 
 #logo1 {
@@ -98,7 +106,7 @@ form{
     cursor: none;
 }
 .cursor-box {
-    cursor: none;
+cursor: none;
     position: relative;
   width: 35em;
   height: 35em;
@@ -116,4 +124,11 @@ form{
       border-radius: 50%;
       border: 0;
       box-shadow: inset 0px 0px 200px 75px rgba(237, 238, 206, 0.5);
-    }
+}
+.card {
+        background: transparent!important;
+}
+
+.h-500 {
+    min-height: 500px!important
+}
