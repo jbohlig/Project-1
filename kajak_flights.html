@@ -1,0 +1,51 @@
+<div class="card-body" id="ar_info_plane">
+    <div class="p-3" id="plane-info">
+        <h5>Book your flight to <span id="city_name_f"></span>, <span id="country_name_f"></span></h5>
+        <form id="plane_form">
+            <div class="form-group">
+                <label for="origin1">From</label>
+                <input type="text" class="form-control" id="origin1" placeholder="Where are you flying from?"
+                    value="Phoenix">
+            </div>
+            <div class="form-group">
+                <label for="origin1">To</label>
+                <input type="text" class="form-control" id="destination1" placeholder="" readonly>
+                <label for="origin1">Date</label>
+                <input type="text" class="form-control" id="departdate1" placeholder="" readonly>
+                <label for="cabin">Class</label>
+                <select class="form-control" id="cabin" name="cabin">
+                    <option value="e" selected>Economy Class</option>
+                    <option value="b">Business Class</option>
+                    <option value="p">Premium Economy</option>
+                    <option value="f">First Class</option>
+                </select>
+                <label for="adults">Quantity</label>
+                <select class="form-control" id="adults" name="adults">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <label for="bags">Bags</label>
+                <select class="form-control" id="bags" name="bags">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+
+            </div>
+            
+        </form>
+        <input class="btn btn-primary btn-block" id="pln_tkts" type="submit" value="Buy Plane tickets">
+  
+    </div>
+    <div class="p-3 text-center" id="plane-results" style="display: none;">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+            <h2 class=" my-5">Searching flights...</h2>
+            <div class="spinner-grow my-5" role="status" id="loading" style="margin: 0 auto">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+</div>
