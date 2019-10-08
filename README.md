@@ -7,7 +7,6 @@
 #### Team Name:  *House Stark*
 
 #### Members:
-* John Bohlig - Team Leader
 * Kayro Figueroa 
 * Irina Kudosova
 * Josh Surridge
@@ -31,11 +30,14 @@ Once events are selected, the application will allow the user to purchase ticket
 ---
 
 
-### APIs to be used:
-* Spotify - playing music in background
+### APIs used:
+* ?? Spotify - playing music in background
 * LastFM - performers bios
-* Bandsintown - upcoming events and tickets acuisitions
-* Kajak or Booking - for hotels/flights
+* Bandsintown - upcoming events and tickets aquisitions
+* Kajak for hotels/flights booking
+* Foursquare Places
+* Dark Sky Weather API
+* Google Maps
 ---
 
 
@@ -43,7 +45,7 @@ Once events are selected, the application will allow the user to purchase ticket
 * Jquery
 * Bootstrap
 * Moment.js
-* PixiJS
+* ?? PixiJS
 ---
 
 

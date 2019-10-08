@@ -10,8 +10,12 @@
             <div class="form-group">
                 <label for="origin1">To</label>
                 <input type="text" class="form-control" id="destination1" placeholder="" readonly>
+            </div>
+            <div class="form-group">
                 <label for="origin1">Date</label>
                 <input type="text" class="form-control" id="departdate1" placeholder="" readonly>
+            </div>
+            <div class="form-group">
                 <label for="cabin">Class</label>
                 <select class="form-control" id="cabin" name="cabin">
                     <option value="e" selected>Economy Class</option>
@@ -19,25 +23,34 @@
                     <option value="p">Premium Economy</option>
                     <option value="f">First Class</option>
                 </select>
-                <label for="adults">Quantity</label>
-                <select class="form-control" id="adults" name="adults">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <label for="bags">Bags</label>
-                <select class="form-control" id="bags" name="bags">
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-
             </div>
-            
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                            <label for="adults">Quantity</label>
+                            <select class="form-control" id="adults" name="adults">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                    </div>
+                    <div class="col-md-6">
+                            <label for="bags">Bags</label>
+                            <select class="form-control" id="bags" name="bags">
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                </div>
+                
+            </div>
+           
         </form>
-        <input class="btn btn-primary btn-block" id="pln_tkts" type="submit" value="Buy Plane tickets">
-  
+        <!-- <input class="btn btn-primary btn-block" id="pln_tkts" type="submit" value="Buy Plane tickets"> -->
+        <button class="btn btn-primary" id="pln_tkts" data-toggle="modal"
+        data-target="#get-plane-tickets">Buy Plane tickets </button>
     </div>
     <div class="p-3 text-center" id="plane-results" style="display: none;">
         <div class="d-flex justify-content-center align-items-center flex-column">
