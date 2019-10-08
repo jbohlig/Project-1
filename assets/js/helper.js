@@ -1,3 +1,5 @@
+//Function that allows us to include html files. Credits to w3schools
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */

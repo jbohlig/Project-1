@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spotlight!</title>
+    <meta name="author" content="Kayro Figueroa, Irina Kudosova, Josh Surridge">
+    <meta name="description" content="A scheduling and planning tool for following your favorite band or tour. 
+                The application will allow the user to specify a performer and will list upcoming events, 
+                allow purchase of tickets, travel, local weather. ">
     <!--reset-->
     <link rel="stylesheet" href="assets/css/reset.css">
     <!--Bootstrap-->
@@ -13,39 +17,89 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/f8020557a2.js"></script>
-    <!--custom style-->
+    <!--Custom style-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--temp font-->
-    <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
     <!-- logo font -->
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-dark overflow-hidden" id="main">
+    <!--Video background-->
     <video id="myVideo" autoplay="true" loop="true" class="video-mainpage" muted plays-inline>
         <source src="assets/video/video-6s.webm" type="video/webm">
         <source src="assets/video/video-6s.mp4" type="video/mp4">
     </video>
-    
+
     <!--------------------------------------INTRO---------------------------------------->
+
     <div w3-include-html="intro.html"></div>
+
     <!----------------------------------END-INTRO---------------------------------------->
+
+
     <!--------------------------------------NAVBAR--------------------------------------->
+
     <div w3-include-html="navbar.html"></div>
+
     <!--------------------------------------/NAVBAR-------------------------------------->
+
+
     <!--------------------------------------QUERY---------------------------------------->
+
     <div id="w-query" w3-include-html="query.html"></div>
+
     <!----------------------------------END-QUERY---------------------------------------->
 
-    <!----------------GOOGLE PLACES, KAJAK FLIGHTS, KAJAK HOTELS------------------------->
-    <div id="w-info"  w3-include-html="information.html"></div>
-    <!------------END GOOGLE PLACES, KAJAK FLIGHTS, KAJAK HOTELS------------------------->
 
+    <!-----------------------PLACES, KAJAK FLIGHTS, KAJAK HOTELS------------------------->
 
+    <div id="w-info" w3-include-html="information.html"></div>
 
-    <!-- jQuery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-------------------END PLACES, KAJAK FLIGHTS, KAJAK HOTELS------------------------->
+
+    <!-- Modal Flight Results-->
+    <div class="modal fade" id="get-plane-tickets" tabindex="-1" role="dialog" aria-labelledby="get-plane-ticketsTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="get-plane-ticketsTitle">Searching for flights</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="get-plane-tickets-body">
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" id="got-to-kajak" href="#" target="_blank">Go To Kajak.com!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--No search term modal-->
+    <div class="modal fade" id="insertTerm" tabindex="-1" role="dialog" aria-labelledby="insertTermTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body center" id="insertTerm-body">
+                    In order for us to help you, <br>
+                    You need to tell us what you are looking for!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary center" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Popper, required by Bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -68,9 +122,18 @@
     <script src="assets/js/main.js" type="module"></script>
     <!--Hotel API-->
     <script src="assets/js/booking.js"></script>
+    <!--Skycon-->
+    <script src="assets/js/skycon.js"></script>
+    <!--Google maps-->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP64kEjA0y4-jxf5WSR3mxZFs-dENVI1I&callback=initMap"></script>
+
+   
+    <!-- Function that allows us to include html files. Credits to w3schools -->
     <script>
         includeHTML();
     </script>
+
 </body>
 
 </html>
