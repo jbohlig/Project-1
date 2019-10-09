@@ -1,7 +1,9 @@
-$(document).ready(function () {
+export {getCityId, hotelSearch};
 
 
-    function getCityId(cityName) {
+
+
+    function getCityId (cityName, dateToLOcal) {
         let queryURL = "https://apidojo-kayak-v1.p.rapidapi.com/locations/search?where=" + cityName;
         $.ajax({
             url: queryURL,
@@ -17,31 +19,14 @@ $(document).ready(function () {
             let cityId = response[0].ctid;
             // hotelSearch(cityId);
             console.log(cityId);
-            hotelSearch(cityId);
+            let addingDay = moment(dateToLOcal).add(1, 'days').format("YYYY-MM-DD");
+            hotelSearch(cityId, dateToLOcal, addingDay);
+            console.log(dateToLOcal);
+            console.log("i am here");
         })
     }
 
-    let joshDate;
-    let dateToLOcal;
-    let addingDay;
-
-    $("#book_htl").on("click", function () {
-
-        joshDate = $("#event_date").text();
-        dateToLOcal = moment.parseZone(joshDate).local().format("YYYY-MM-DD"); // "2019-12-20"
-        addingDay = moment(dateToLOcal).add(1, 'days').format("YYYY-MM-DD");
-     
-        let cityName = $("#city_name").text();
-        getCityId(cityName);
-
-        console.log(addingDay);
-        console.log(joshDate);
-        console.log(dateToLOcal);
-        console.log(cityName);
-
-    });
-
-    function hotelSearch(cityId) {
+    function hotelSearch(cityId, dateToLOcal, addingDay) {
 
         var settings = {
             "async": true,
@@ -60,4 +45,4 @@ $(document).ready(function () {
 
     }
 
-});
+
