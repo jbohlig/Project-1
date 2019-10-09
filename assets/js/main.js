@@ -5,7 +5,8 @@ import { searchBandsInTown, searchBandsInTownVenue } from './modules/bandsintown
 import { getApCode } from './modules/kajak.js';
 import { fourSquarePlaces } from './modules/places.js';
 import { initMap } from './modules/gmap.js';
-import {weatherForecast} from './modules/weather.js'
+import {weatherForecast} from './modules/weather.js';
+import {getCityId, hotelSearch} from './modules/booking.js';
 
 
 $(document).ready(function () {
@@ -92,6 +93,7 @@ $(document).ready(function () {
     initMap(lat, lon)
     fourSquarePlaces(lat, lon, venue)
     weatherForecast(lat, lon, eventDate)
+    getCityId(city, dateToLOcal)
     
    // getApCode(cityName);
    
@@ -106,6 +108,17 @@ $(document).ready(function () {
   })
 
 
+
+  $("body").on("click", "#book_htl", function (event) {
+event.preventDefault();
+    
+   let joshDate = $("#event_date").text();
+  //  let dateToLOcal = moment(joshDate).local().format("YYYY-MM-DD"); // "2019-12-20"
+  //  let addingDay = moment(dateToLOcal).add(1, 'days').format("YYYY-MM-DD");
+ 
+    let cityName = $("#city_name").text();
+  
+});
 
 
 
