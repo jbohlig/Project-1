@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spotlight!</title>
+    <meta name="author" content="Kayro Figueroa, Irina Kudosova, Josh Surridge">
+    <meta name="description" content="A scheduling and planning tool for following your favorite band or tour. 
+                The application will allow the user to specify a performer and will list upcoming events, 
+                allow purchase of tickets, travel, local weather. ">
     <!--reset-->
     <link rel="stylesheet" href="assets/css/reset.css">
     <!--Bootstrap-->
@@ -13,223 +17,89 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/f8020557a2.js"></script>
-    <!--custom style-->
+    <!--Custom style-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--temp font-->
-    <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
     <!-- logo font -->
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
-
-
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-dark" id="main">
-
-
-
+<body class="bg-dark overflow-hidden" id="main">
+    <!--Video background-->
     <video id="myVideo" autoplay="true" loop="true" class="video-mainpage" muted plays-inline>
         <source src="assets/video/video-6s.webm" type="video/webm">
         <source src="assets/video/video-6s.mp4" type="video/mp4">
     </video>
-    <!--toggle buttons for interface testing, have to be gone in production-->
-    <!--  <div class="w-100 bg-light text-right p-1 bg-dark" id="buttons" style="position:absolute; top:0; right:0;">
-            <button id="toggle_intro" class="btn btn-light" type="button">Toggle intro</button>
-            <button id="toggle_trip" class="btn btn-light" type="button">Toggle Trip Planner</button>
-        </div> -->
-
 
     <!--------------------------------------INTRO---------------------------------------->
 
-
-
-    <section class="intro pt-5" id="intro">
-
-
-        <div class="container text-center pt-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3  pt-5">
-                    <h1 id="logo1" class="logo text-center text-light h1"><i id="logo2" class="fas fa-sliders-h"></i>
-                        SpotlighT</h1>
-                    <form>
-                        <div class="form-group text-light">
-                            <label for="artist_input"></label>
-                            <input class="form-control" type="text" id="artist_input"
-                                placeholder="Insert band name to start">
-                        </div>
-                        <input class="btn btn-primary" id="main_search" type="submit" value="Search">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="cursor-box" id="spotlight">
-            <div class="cursor-box-child" id="spotlight-child">
-            </div>
-
-        </div>
-    </section>
+    <div w3-include-html="intro.html"></div>
 
     <!----------------------------------END-INTRO---------------------------------------->
+
+
     <!--------------------------------------NAVBAR--------------------------------------->
-    <div class="container" id="navbar" style="display: none">
-        <nav class="navbar navbar-dark navbar-expand-lg  dark-opacity-05 justify-content-between mt-md-5 rounded">
-            <a class="navbar-brand" href="index.html">
-                <h1 id="logo3" class="logo text-center text-light h1"><i id="logo4" class="fas fa-sliders-h"></i>
-                    SpotlighT</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" id="artist_input_navbar" type="search"
-                        placeholder="Insert band name to start">
-                    <input class="btn btn-primary" id="navbar_search" type="submit" value="Search">
-                </form>
-            </div>
-        </nav>
-    </div>
+    <div w3-include-html="navbar.html"></div>
+
     <!--------------------------------------/NAVBAR-------------------------------------->
-    <!--------------------------------------QUERY---------------------------------------->
 
-    <section class="intro pt-5" id="query" style="display: none">
-        <div class="container text-left pt-2">
-
-            <div class="row">
-                <div id="searchcontainer" class="col-md-12">
-                    <div class="card mb-3" id="artist_info">
-                        <div class="row no-gutters">
-                            <div class="col-md-4" id="artist_img">
-                                <!--jQuery artist image count goes here-->
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-header" id="ar_name">
-
-                                    <!--jQuery artist name count goes here-->
-                                </div>
-                                <div class="card-body" id="ar_info">
-
-
-                                    <!--jQuery Facebook link goes here-->
-                                    <!--jQuery BiT link goes here-->
-                                </div>
-                                <div class="card-footer" id="ar_socials">
-
-                                    <!--jQuery Facebook link goes here-->
-                                    <!--jQuery BiT link goes here-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="upcomingevents" class="card mb-3">
-                        <div class="card-header" id="artist_events_count">
-                            <!--jQuery events count goes here-->
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <th><b>Date</b></th>
-                                    <th><b>Country/Venue</b></th>
-                                    <th><b>Buy Show Tickets</b></th>
-                                    <th><b>Buy Plane Tickets</b></th>
-                                </thead>
-                                <tbody id="table_body">
-                                    <!--upcoming events info comes here-->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!----------------------------------END-QUERY---------------------------------------->
 
     <!--------------------------------------QUERY---------------------------------------->
 
-    <!--have no idea how this is gonna be, just a placeholder for now-->
-    <section class="intro pt-5" id="trip" style="display: none">
-        <div class="container text-left pt-5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card mb-3" id="trip_info">
-                        <div class="row no-gutters">
-                            <div class="col-md-4 p-4" id="">
-                                <h3>We are going to:</h3>
-                                <h5><span id="country_name"></span>, <span id="city_name"></span></h5>
-                                <h5 id="event_date"></h5>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card-body" id="ar_info_plane">
-                                    <div class="p-3">
-                                        <form id="plane_form">
-                                            <div class="form-group">
-                                                <label for="origin1">From</label>
-                                                <input type="text" class="form-control" id="origin1"
-                                                    placeholder="Where are you flying from?">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="origin1">To</label>
-                                                <input type="text" class="form-control" id="destination1" placeholder=""
-                                                    readonly>
-                                            </div>
+    <div id="w-query" w3-include-html="query.html"></div>
 
-                                        </form>
-                                        <button class="btn btn-primary" id="pln_tkts">Buy Plane tickets </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card-body" id="ar_info_hotel">
-                                    <div class="p-3">
-                                        <button class="btn btn-primary" id="book_htl">Book Hotel </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <!----------------------------------END-QUERY---------------------------------------->
 
 
+    <!-----------------------PLACES, KAJAK FLIGHTS, KAJAK HOTELS------------------------->
 
-    <!-- jQuery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <div id="w-info" w3-include-html="information.html"></div>
+
+    <!-------------------END PLACES, KAJAK FLIGHTS, KAJAK HOTELS------------------------->
+
+    <!-- Modal Flight Results-->
+    <div class="modal fade" id="get-plane-tickets" tabindex="-1" role="dialog" aria-labelledby="get-plane-ticketsTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="get-plane-ticketsTitle">Searching for flights</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="get-plane-tickets-body">
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" id="got-to-kajak" href="#" target="_blank">Go To Kajak.com!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--No search term modal-->
+    <div class="modal fade" id="insertTerm" tabindex="-1" role="dialog" aria-labelledby="insertTermTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body center" id="insertTerm-body">
+                    In order for us to help you, <br>
+                    You need to tell us what you are looking for!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary center" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Popper, required by Bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -252,6 +122,17 @@
     <script src="assets/js/main.js" type="module"></script>
     <!--Hotel API-->
     <script src="assets/js/booking.js"></script>
+    <!--Skycon-->
+    <script src="assets/js/skycon.js"></script>
+    <!--Google maps-->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP64kEjA0y4-jxf5WSR3mxZFs-dENVI1I&callback=initMap"></script>
+
+   
+    <!-- Function that allows us to include html files. Credits to w3schools -->
+    <script>
+        includeHTML();
+    </script>
 
 </body>
 

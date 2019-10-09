@@ -1,48 +1,60 @@
 //the ideal is use main.js only for click events, and import everything else
 
-import lastFm from './lastfm.js';
-import { searchBandsInTown, searchBandsInTownVenue } from './bandsintown.js';
-import { getApCode, settingsFlight } from './kajak.js';
-
+import lastFm from './modules/lastfm.js';
+import { searchBandsInTown, searchBandsInTownVenue } from './modules/bandsintown.js';
+import { getApCode } from './modules/kajak.js';
+import { fourSquarePlaces } from './modules/places.js';
+import { initMap } from './modules/gmap.js';
+import {weatherForecast} from './modules/weather.js'
 
 
 $(document).ready(function () {
-
+  
+  
   //main search button, insert name, get all the info
   $("#main_search").on("click", function (event) {
     event.preventDefault();
+    
     let artist = $("#artist_input").val().trim();
     let artistL = artist.split(" ").join("+");
+    if (artist) {
     $("#intro").fadeOut("slow", function () {
       //starting both functions, starting simultaneasly both queries
       searchBandsInTown(artistL);
       searchBandsInTownVenue(artistL);
       lastFm(artistL);
       $("#artist_input").val("")
+      $("body").removeClass("overflow-hidden");
+      $("body").addClass("overflow-auto");
+
       
-    });
+    });}
+    else {
+      $("#insertTerm").modal("show");
+    }
   });
 
   //navbar search button, insert name, get all the info
   $("#navbar_search").on("click", function (event) {
     event.preventDefault();
-    $("#artist_img").empty();
     $("#ar_name").empty();
     $("#ar_info").empty();
     $("#ar_socials").empty();
+    $("#artist_img").empty();
     $("#artist_events_count").empty();
-    $("#table_body").empty();
-
+    $("#table_body").empty(); 
+    $("#trip").hide(); 
 
     let artist = $("#artist_input_navbar").val().trim();
     let artistL = artist.split(" ").join("+");
 
     $("#intro").fadeOut("slow", function () {
+
       //starting both functions, starting simultaneasly both queries
       searchBandsInTown(artistL);
       searchBandsInTownVenue(artistL);
       lastFm(artistL);
-      $("#artist_input_navbar").val("")
+      $("#artist_input_navbar").val("");
     });
   });
 
@@ -53,17 +65,44 @@ $(document).ready(function () {
     //passing names of city and country to the next screen
     let country = $(this).attr("data-country");
     let city = $(this).attr("data-city");
+    let venue = $(this).attr("data-venue");
     let eventDate = $(this).attr("data-date");
+    let niceDate = moment(eventDate).local().format("LLL");
+    let lat = $(this).attr("data-lat");
+    let lon = $(this).attr("data-lon");
+    let dateToLOcal = moment(eventDate).local().format("YYYY-MM-DD"); // "2019-12-20"
+    let datePlaceholder = moment(eventDate).local().format("LL"); // "2019-12-20"
+    let departdate1 = dateToLOcal;
+    
+    $("#destination1").attr("name", city);
+    $("#destination1").attr("placeholder", city + ", " + country);
+    $("#departdate1").attr("placeholder", datePlaceholder);
+    $("#departdate1").attr("data-depart", departdate1);
     $("#city_name").text(city);
+    $("#venue_name").text(venue);
     $("#country_name").text(country);
-    $("#event_date").text(eventDate);
+    $("#country_name_f").text(country);
+    $("#city_name_f").text(city);
+    $("#event_date").text(niceDate);
     $("#query").fadeOut("slow");
     $("#trip").show();
+    lon = parseFloat(lon);
+    lat = parseFloat(lat);
+    console.log(typeof lat, typeof lon)
+    initMap(lat, lon)
+    fourSquarePlaces(lat, lon, venue)
+    weatherForecast(lat, lon, eventDate)
+    
+   // getApCode(cityName);
+   
   })
 
-  $("#pln_tkts").on("click", function () {
+  $("body").on("click", "#pln_tkts", function (event) {
+    event.preventDefault();
     let cityName = $("#city_name").text();
-    getApCode(cityName);
+    let origin = $("#origin1").val();
+    getApCode(cityName, origin);
+    console.log("clicking")
   })
 
 
