@@ -194,3 +194,116 @@ canvas {
     float: left;
     margin-right: 8px;
   }
+/* Styling for Buttons */
+
+#button1 {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color:#55bcc9;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#button1:hover {
+    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color:#474745;
+}
+#button1:active {
+    position:relative;
+    top:1px;
+}
+
+#button2 {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color:#fc4445;
+    border-radius:8px;
+    border-width: 3px;
+    border-color: rgb(204, 204,204);
+    border-block-start-style: groove;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 22px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#button2:hover {
+    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color:#474745;
+}
+#button2:active {
+    position:relative;
+    top:1px;
+}
+
+#navbar_search {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #3feee6 5%, #474745 100%);
+    background-color:#3feee6;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#navbar_search:hover {
+    background:linear-gradient(to bottom, #474745 5%, #3feee6 100%);
+    background-color:#474745;
+}
+#navbar_search:active {
+    position:relative;
+    top:1px;
+}
+
+#book_htl, #pln_tkts {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color:#55bcc9;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#book_htl:hover, #pln_tkts:hover {
+    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color:#474745;
+}
+#book_htl:active, #pln_tkts:active {
+    position:relative;
+    top:1px;
+}
+
