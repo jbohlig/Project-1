@@ -33,7 +33,6 @@ function hotelSearch(cityId, dateToLOcal, addingDay) {
     let adults = $("#adultsH").val();
     let rooms = $("#rooms").val();
     let city = $("#destination2").attr("name");
-
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -50,9 +49,11 @@ function hotelSearch(cityId, dateToLOcal, addingDay) {
         $("#hotel-info").hide();
         $("#hotel-results").show();
         let currentDate = moment(dateToLOcal).local().format("LL");
-console.log(response.resultcount)
+        console.log(response.resultcount)
+        
 
         if (response.resultcount > 0) {
+            
             console.log("it works")
             $("#hotel-results").html(`
                                     <p class="lead">We found <h5>${response.resultcount}</h5> hotels</p>

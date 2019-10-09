@@ -11,10 +11,6 @@ import {getCityId, hotelSearch} from './modules/booking.js';
 
 $(document).ready(function () {
   
-  
-
-
-  
   //main search button, insert name, get all the info
   $("#main_search").on("click", function (event) {
     event.preventDefault();
@@ -71,7 +67,7 @@ $(document).ready(function () {
     let city = $(this).attr("data-city");
     let venue = $(this).attr("data-venue");
     let eventDate = $(this).attr("data-date");
-    let niceDate = moment(eventDate).local().format("LLL");
+    let niceDate = moment(eventDate).local().format("llll");
     let lat = $(this).attr("data-lat");
     let lon = $(this).attr("data-lon");
     let dateToLOcal = moment(eventDate).local().format("YYYY-MM-DD"); // "2019-12-20"
@@ -88,6 +84,9 @@ $(document).ready(function () {
     $("#departdate1").attr("data-depart", departdate1);
     $("#checkIn").attr("data-depart", departdate1);
     $("#city_name").text(city);
+    $("#city_hotel").text(city + ", " + country);
+    $("#city_flight").text(city + ", " + country);
+    
     $("#venue_name").text(venue);
     $("#country_name").text(country);
     $("#country_name_f").text(country);
@@ -98,7 +97,7 @@ $(document).ready(function () {
     lon = parseFloat(lon);
     lat = parseFloat(lat);
     console.log(typeof lat, typeof lon)
-    initMap(lat, lon)
+    initMap(lat, lon, venue)
     fourSquarePlaces(lat, lon, venue)
     weatherForecast(lat, lon, eventDate)
     
