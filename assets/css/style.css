@@ -94,13 +94,13 @@ section {
   form{
       position: relative;
       z-index: 2;
-      cursor: none;
+      /* cursor: none; */
   }
   .cursor-box {
       cursor: none;
       position: relative;
-    width: 40em;
-    height: 40em;
+    width: 300px;
+    height: 300px;
     position: absolute;
     box-shadow: 0 0 0 10000px rgb(0, 0, 0);
     z-index: 1;
@@ -126,37 +126,6 @@ section {
     }
 }
 
-.main {
-  position: relative;
-  background-color: #000;
-  background: linear-gradient(45deg, rgb(0, 0, 0),rgb(110, 110, 110),#010);
-}
-
-form{
-    position: relative;
-    z-index: 999;
-    cursor: pointer;
-}
-.cursor-box {
-  cursor: none;
-  position: relative;
-  width: 240px;
-  height: 240px;
-  position: absolute;
-  box-shadow: 0 0 0 10000px rgb(0, 0, 0);
-  z-index: 1;
-  border-radius: 50%;
-  opacity: .85;
-}
-.cursor-box-child {
-    cursor: none;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      border-radius: 50%;
-      border: 0;
-      box-shadow: inset 0px 0px 200px 75px rgba(237, 238, 206, 0.5);
-}
 .card {
         background: transparent!important;
 }
@@ -193,4 +162,136 @@ canvas {
     display: block;
     float: left;
     margin-right: 8px;
+  }
+/* Styling for Buttons */
+
+#button1 {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color:#55bcc9;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#button1:hover {
+    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color:#474745;
+}
+#button1:active {
+    position:relative;
+    top:1px;
+}
+
+#button2 {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color:#fc4445;
+    border-radius:8px;
+    border-width: 3px;
+    border-color: rgb(204, 204,204);
+    border-block-start-style: groove;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 22px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#button2:hover {
+    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color:#474745;
+}
+#button2:active {
+    position:relative;
+    top:1px;
+}
+
+#navbar_search {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #3feee6 5%, #474745 100%);
+    background-color:#3feee6;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#navbar_search:hover {
+    background:linear-gradient(to bottom, #474745 5%, #3feee6 100%);
+    background-color:#474745;
+}
+#navbar_search:active {
+    position:relative;
+    top:1px;
+}
+
+#book_htl, #pln_tkts {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color:#55bcc9;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#book_htl:hover, #pln_tkts:hover {
+    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color:#474745;
+}
+#book_htl:active, #pln_tkts:active {
+    position:relative;
+    top:1px;
+}
+
+#lineDrawing{
+width: 450px;
+text-align: center;
+line-height: 5px;
+
+}
+
+.introLine{
+    padding-left:60px;
+}
+#svgGroup{
+    width: 300px;
+}
+
+.my-path {
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:2;
   }
