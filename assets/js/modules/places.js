@@ -23,6 +23,9 @@ function fourSquarePlaces(lat, lon, venue) {
             console.log(response)
 
             let venueId = response.response.venues[0].id;
+            let cc = response.response.venues[0].location.cc;
+            $(".flags").attr("src", "https://www.countryflags.io/" + cc + "/flat/64.png");
+            console.log(cc)
             console.log(venueId)
             let retriveVenue = "https://api.foursquare.com/v2/venues/" + venueId +
                 "?client_id=" + clientId +
@@ -40,7 +43,7 @@ function fourSquarePlaces(lat, lon, venue) {
                             response.response.venue.bestPhoto.height +
                             response.response.venue.bestPhoto.suffix;
                         $("#foursquare_places").attr("style", "background: url(" + linkToImg +
-                         ") top left no-repeat; background-size: cover");
+                            ") top left no-repeat; background-size: cover");
 
                     }
                 })

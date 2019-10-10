@@ -175,12 +175,16 @@ form{
   }
 
 .nicebox {
-    text-align: center;
-    background: #eee;
+    text-align: left;
+    background: #eeeeee;
     padding: 5px;
     border: 1px solid #eeeeee;
     border-radius: 6px;
     box-shadow: 0 0 5px #666;
+    text-shadow: 1px 1px #eee;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 figure {
@@ -191,8 +195,14 @@ figure {
 
 canvas {
     display: block;
-    float: left;
+    float: right;
     margin-right: 8px;
+  }
+  .flags{
+    display: block;
+    float: right;
+    margin-right: 8px;
+    
   }
 /* Styling for Buttons */
 
@@ -251,7 +261,23 @@ canvas {
     top:1px;
 }
 
-#navbar_search {
+#artist_input_navbar {
+    box-shadow: inset  0px 0px 1px 1px #276873;
+}
+
+#artist_input_navbar:focus {
+    box-shadow: inset 0px 0px 10px 4px #276873;
+}
+
+#artist_input {
+    box-shadow: inset  0px 0px 4px 1px #276873;
+}
+
+#artist_input:focus {
+    box-shadow: inset 0px 0px 10px 4px #276873;
+}
+
+#main_search {
     box-shadow: 0px 10px 14px -7px #276873;
     background:linear-gradient(to bottom, #3feee6 5%, #474745 100%);
     background-color:#3feee6;
@@ -267,6 +293,33 @@ canvas {
     font-size:16px;
     font-weight:bold;
     padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#main_search:hover {
+    background:linear-gradient(to bottom, #474745 5%, #3feee6 100%);
+    background-color:#474745;
+}
+#main_search:active {
+    position:relative;
+    top:1px;
+}
+#navbar_search {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #3feee6 5%, #474745 100%);
+    background-color:#3feee6;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
     text-decoration:none;
     text-shadow:0px 1px 0px #3d768a;
 }

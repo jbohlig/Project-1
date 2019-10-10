@@ -67,7 +67,6 @@ function getApCode(cityName, origin) {
 
 
                 let niceDate = moment(departdate1).local().format("LL");
-                $("#city_name_f").text(displayCity);
                 $("#country_name_f").text(displayCountry);
 
 
