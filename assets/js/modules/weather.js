@@ -27,10 +27,10 @@ function weatherForecast(lat, lon, day) {
             <h6 class="text-left">It's going to be a ${summary} night!<br>
             Expected temp ${temperatureCelsius}°F</h6>
             `)
-            console.log(typeof temperatureCelsius)
 
+            //just for fun, displaying message to user based on weather
             let message = "";
-             if (temperatureCelsius > 70 && temperatureCelsius < 90) {
+            if (temperatureCelsius > 70 && temperatureCelsius < 90) {
                 message = "You've got the nicest weather there!"
             }
             else if (temperatureCelsius > 90) {
@@ -49,8 +49,7 @@ function weatherForecast(lat, lon, day) {
                 icon === "partly-cloudy-night") {
                 message = "You've got the nicest weather there!"
             }
-            
-            
+
             $("#message").text(message)
             //skyicon script
             let icons = new Skycons({ "color": "navy" }),

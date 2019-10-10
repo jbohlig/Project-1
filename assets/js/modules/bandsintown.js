@@ -8,8 +8,6 @@ function searchBandsInTown(artist) {
     method: "GET"
   }).then(function (response) {
     $("#navbar").show()
-    console.log(queryURL)
-
     $("#query").show();
 
     //generating image
