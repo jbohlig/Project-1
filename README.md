@@ -31,7 +31,6 @@ Once events are selected, the application will allow the user to purchase ticket
 
 
 ### APIs used:
-* ?? Spotify - playing music in background
 * LastFM - performers bios
 * Bandsintown - upcoming events and tickets aquisitions
 * Kajak for hotels/flights booking
@@ -46,7 +45,7 @@ Once events are selected, the application will allow the user to purchase ticket
 * Jquery
 * Bootstrap
 * Moment.js
-* ?? PixiJS
+* anime.js
 ---
 
 
@@ -54,8 +53,7 @@ Once events are selected, the application will allow the user to purchase ticket
 
 * Base HTML - Irina
 * Main page layout - Irina/Josh
-* PixyJS - Kayro
-* Spotify API integration - Josh
+* AnimeJS - Kayro
 * Bandsintown/LastFM API Integration - Irina
 * Kajak API Integration - John
 * DB setup - John
