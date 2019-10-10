@@ -8,8 +8,8 @@ $(document).ready(function () {
   function moveSpotlight(e) {
     e.preventDefault();
     let pos, x, y;
-    x = e.clientX - 275;
-    y = e.clientY - 275;
+    x = e.clientX - 150;
+    y = e.clientY - 150;
     spotlight.style.left = x + "px";
     spotlight.style.top = y + "px";
     spotlight_child.style.left = x + "px";
