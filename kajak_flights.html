@@ -1,6 +1,7 @@
-<div class="card-body" id="ar_info_plane">
+<div class="card-body">
     <div class="p-3" id="plane-info">
         <h5>Book your flight to <span id="city_flight"></h5>
+        <!--Plane booking form-->
         <form id="plane_form">
             <div class="form-group">
                 <label for="origin1">From</label>
@@ -18,33 +19,36 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
-                            <label for="adults">Quantity</label>
-                            <select class="form-control" id="adults" name="adults">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
+                        <label for="adults">Quantity</label>
+                        <select class="form-control select" id="adults" name="adults">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
                     </div>
                     <div class="col-md-6">
-                            <label for="bags">Bags</label>
-                            <select class="form-control" id="bags" name="bags">
-                                <option value="0" selected>0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
-                        </div>
+                        <label for="bags">Bags</label>
+                        <select class="form-control" id="bags" name="bags">
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
                 </div>
-                
+
             </div>
-           
+
         </form>
         <!-- <input class="btn btn-primary btn-block" id="pln_tkts" type="submit" value="Buy Plane tickets"> -->
-        <button class="btn btn-primary" id="pln_tkts" data-toggle="modal"
-        data-target="#get-plane-tickets">Buy Plane tickets </button>
+        <!--this will show us information in modal (but we are displaying same in formation in window too)-->
+        <button class="btn btn-block" id="pln_tkts" data-toggle="modal" data-target="#get-plane-tickets">Buy Plane
+            tickets </button>
     </div>
+    <!--results are hidden for now-->
     <div class="p-3 text-center" id="plane-results" style="display: none;">
-        <div class="d-flex justify-content-center align-items-center flex-column">
+        <!--pretty spinner -->
+        <div class="d-flex justify-content-center align-items-center flex-column" id="p-spinner">
             <h2 class=" my-5">Searching flights...</h2>
             <div class="spinner-grow my-5" role="status" id="loading" style="margin: 0 auto">
                 <span class="sr-only">Loading...</span>

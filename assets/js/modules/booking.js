@@ -50,17 +50,17 @@ function hotelSearch(cityId, dateToLOcal, addingDay) {
         $("#hotel-results").show();
         let currentDate = moment(dateToLOcal).local().format("LL");
         console.log(response.resultcount)
-        
+
 
         if (response.resultcount > 0) {
-            
+
             console.log("it works")
             $("#hotel-results").html(`
                                     <p class="lead">We found <h5>${response.resultcount}</h5> hotels</p>
                                     <p class="lead">on ${currentDate}</p>
                                     <p class="lead">from ${$("#origin1").val()} to ${city}</p>
                                     <p class="lead">Check them out on </p>
-                                    <a class="btn btn-primary btn-block" href="${response.baseUrl + response.shareURL}" target="_blank">Kayak.com</a>
+                                    <a class="btn btn-josh btn-block" href="${response.baseUrl + response.shareURL}" target="_blank">Kayak.com</a>
 
             `)
         }
@@ -71,12 +71,12 @@ function hotelSearch(cityId, dateToLOcal, addingDay) {
                                         `);
         }
         if (response.resultcount > 0) {
-            $("#get-plane-tickets-body").html(`
+            $("#get-hotel-booking-body").html(`
             We found ${response.resultcount} hotels for ${city} on ${currentDate}!
             Would you like to check it out on the Kayak website?
             <a href="${response.baseUrl + response.shareURL}" target="_blank">There you go!</a>
             `)
-            $("#got-to-kajak").attr("href", response.baseUrl + response.shareURL)
+            $("#got-to-kayak").attr("href", response.baseUrl + response.shareURL)
         }
         else {
             $("#hotel-results").html(`We are sorry, we didn't find any hotel for ${city} on ${currentDate}. 

@@ -19,14 +19,11 @@ function fourSquarePlaces(lat, lon, venue) {
         method: "GET",
     })
         .then(function (response) {
-            // Code for handling API response
-            console.log(response)
 
             let venueId = response.response.venues[0].id;
             let cc = response.response.venues[0].location.cc;
             $(".flags").attr("src", "https://www.countryflags.io/" + cc + "/flat/64.png");
-            console.log(cc)
-            console.log(venueId)
+
             let retriveVenue = "https://api.foursquare.com/v2/venues/" + venueId +
                 "?client_id=" + clientId +
                 "&client_secret=" + secret +
@@ -48,8 +45,6 @@ function fourSquarePlaces(lat, lon, venue) {
                     }
                 })
         })
-
-
         .catch(function (error) {
             // Code for handling errors
             console.log(error)

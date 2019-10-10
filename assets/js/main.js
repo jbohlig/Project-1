@@ -5,36 +5,36 @@ import { searchBandsInTown, searchBandsInTownVenue } from './modules/bandsintown
 import { getApCode } from './modules/kajak.js';
 import { fourSquarePlaces } from './modules/places.js';
 import { initMap } from './modules/gmap.js';
-import {weatherForecast} from './modules/weather.js';
-import {getCityId, hotelSearch} from './modules/booking.js';
+import { weatherForecast } from './modules/weather.js';
+import { getCityId, hotelSearch } from './modules/booking.js';
 
 
 $(document).ready(function () {
-  
+
   //main search button, insert name, get all the info
   $("#main_search").on("click", function (event) {
     event.preventDefault();
-    
+
     let artist = $("#artist_input").val().trim();
     let artistL = artist.split(" ").join("+");
     if (artist) {
-    $("#intro").fadeOut("slow", function () {
-      //starting both functions, starting simultaneasly both queries
-      searchBandsInTown(artistL);
-      searchBandsInTownVenue(artistL);
-      lastFm(artistL);
-      $("#artist_input").val("")
-      $("body").removeClass("overflow-hidden");
-      $("body").addClass("overflow-auto");
-
-      
-    });}
+      $("#intro").fadeOut("slow", function () {
+        //starting three functions, starting simultaneasly all queries
+        searchBandsInTown(artistL);
+        searchBandsInTownVenue(artistL);
+        lastFm(artistL);
+        $("#artist_input").val("");
+        $("body").removeClass("overflow-hidden"); // overflow fix for our mouse effect
+        $("body").addClass("overflow-auto");
+      });
+    }
     else {
-      $("#insertTerm").modal("show");
+      $("#insertTerm").modal("show"); // yeah! we have a nice model window that says nicely "fill that field!"
     }
   });
 
   //navbar search button, insert name, get all the info
+  //big pain in the butt this one, have to empty/remove everything
   $("#navbar_search").on("click", function (event) {
     event.preventDefault();
     $("#ar_name").empty();
@@ -42,15 +42,19 @@ $(document).ready(function () {
     $("#ar_socials").empty();
     $("#artist_img").empty();
     $("#artist_events_count").empty();
-    $("#table_body").empty(); 
-    $("#trip").hide(); 
+    $("#table_body").empty();
+    $("#plane-results").empty();
+    $("#plane-info").show();
+    $("#hotel-info").show();
+    $("#hotel-results").empty();
+    $("#trip").hide();
 
     let artist = $("#artist_input_navbar").val().trim();
     let artistL = artist.split(" ").join("+");
 
     $("#intro").fadeOut("slow", function () {
 
-      //starting both functions, starting simultaneasly both queries
+      //starting three functions, starting simultaneasly all queries
       searchBandsInTown(artistL);
       searchBandsInTownVenue(artistL);
       lastFm(artistL);
@@ -59,7 +63,7 @@ $(document).ready(function () {
   });
 
   //click on any of Plan Your Trip buttons will show you the screen, with city and country we gotta go.
-  //at that point hotel and plaint tickets apis are coming in
+  //at that point hotel and plain tickets apis are coming in
   $("body").on("click", ".go-trip", function (event) {
     event.preventDefault();
     //passing names of city and country to the next screen
@@ -73,8 +77,8 @@ $(document).ready(function () {
     let dateToLOcal = moment(eventDate).local().format("YYYY-MM-DD"); // "2019-12-20"
     let datePlaceholder = moment(eventDate).local().format("LL"); // "2019-12-20"
     let departdate1 = dateToLOcal;
-    let checkIn = dateToLOcal;
-    
+    let checkIn = dateToLOcal; //do you still need it, Josh?
+
     $("#checkIn").attr("placeholder", datePlaceholder);
     $("#destination1").attr("name", city);
     $("#destination1").attr("placeholder", city + ", " + country);
@@ -86,7 +90,7 @@ $(document).ready(function () {
     $("#city_name").text(city);
     $("#city_hotel").text(city + ", " + country);
     $("#city_flight").text(city + ", " + country);
-    
+
     $("#venue_name").text(venue);
     $("#country_name").text(country);
     $("#country_name_f").text(country);
@@ -96,42 +100,26 @@ $(document).ready(function () {
     $("#trip").show();
     lon = parseFloat(lon);
     lat = parseFloat(lat);
-    console.log(typeof lat, typeof lon)
+    //passing all the info we need our functions to function
     initMap(lat, lon, venue)
     fourSquarePlaces(lat, lon, venue)
     weatherForecast(lat, lon, eventDate)
-    
-   // getApCode(cityName);
-   
   })
 
+  //searching for flights
   $("body").on("click", "#pln_tkts", function (event) {
     event.preventDefault();
     let cityName = $("#city_name").text();
     let origin = $("#origin1").val();
     getApCode(cityName, origin);
-    console.log("clicking")
   })
 
 
-
+  //searching for hotels
   $("body").on("click", "#book_htl", function (event) {
-event.preventDefault();
-    
+    event.preventDefault();
     let city = $("#destination2").attr("name");
     let dateToLOcal = $("#checkIn").attr("data-depart");
-
-    console.log(days);
-    console.log(adults);
-    console.log(rooms);
-    console.log(city);
-    console.log(dateToLOcal);
-
-  getCityId(city, dateToLOcal)
-  
-  
-});
-
-
-
+    getCityId(city, dateToLOcal)
+  });
 })

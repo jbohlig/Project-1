@@ -1,3 +1,7 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 section {
     min-height: 100vh;
     background: rgba(57, 57, 58, 0.15) url("../images/live-music.jpg") no-repeat top center;
@@ -183,8 +187,18 @@ form{
     box-shadow: 0 0 5px #666;
     text-shadow: 1px 1px #eee;
     color: #222;
-    font-family: 'Roboto', sans-serif;
+}
 
+.modal-content{
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    box-shadow: 0 0 9px #333;
+    text-shadow: 1px 1px #eee;
+    color: #222;
+}
+
+.modal-header {
+    background-color:#eee;
 }
 
 figure {
@@ -261,21 +275,50 @@ canvas {
     top:1px;
 }
 
-#artist_input_navbar {
+.btn-josh {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color:#fc4445;
+    border-radius:8px;
+    border-width: 3px;
+    border-color: rgb(204, 204,204);
+    border-block-start-style: groove;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 22px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+.btn-josh:hover {
+    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color:#474745;
+    color:#ffffff;
+}
+.btn-josh:active {
+    position:relative;
+    top:1px;
+    color:#ffffff;
+}
+
+input[type=text], input[type=number], select  {
     box-shadow: inset  0px 0px 1px 1px #276873;
 }
 
-#artist_input_navbar:focus {
+input[type=text]:focus, select:focus {
     box-shadow: inset 0px 0px 10px 4px #276873;
 }
 
-#artist_input {
-    box-shadow: inset  0px 0px 4px 1px #276873;
-}
-
-#artist_input:focus {
+input[type=text]:hover, select:hover {
     box-shadow: inset 0px 0px 10px 4px #276873;
-}
+  }
+  option{
+    background: #E0F7FA;
+    box-shadow:  0px 0px 10px 4px #276873;
+  }
 
 #main_search {
     box-shadow: 0px 10px 14px -7px #276873;
@@ -332,7 +375,35 @@ canvas {
     top:1px;
 }
 
-#book_htl, #pln_tkts {
+
+#pln_tkts {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color:#fc4445;
+    border-radius:8px;
+    border-width: 3px;
+    border-color: rgb(204, 204,204);
+    border-block-start-style: groove;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 22px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#pln_tkts:hover {
+    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color:#474745;
+}
+#pln_tkts:active {
+    position:relative;
+    top:1px;
+}
+
+#book_htl {
     box-shadow: 0px 10px 14px -7px #276873;
     background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
     background-color:#55bcc9;
@@ -351,11 +422,67 @@ canvas {
     text-decoration:none;
     text-shadow:0px 1px 0px #3d768a;
 }
-#book_htl:hover, #pln_tkts:hover {
+#book_htl:hover {
     background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
     background-color:#474745;
 }
-#book_htl:active, #pln_tkts:active {
+#book_htl:active {
+    position:relative;
+    top:1px;
+}
+
+#got-to-kayak, #got-to-kajak {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color:#55bcc9;
+    border-radius:8px;
+    border-radius:8px;
+    border-width: 3px;
+    border-block-start-style: groove;
+    border-color: rgb(204, 204, 204);
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 26px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#got-to-kayak:hover, #got-to-kajak:hover {
+    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color:#474745;
+}
+#got-to-kayak:active, #got-to-kajak:active {
+    position:relative;
+    top:1px;
+}
+
+
+#close_hotel, #close_flights {
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color:#fc4445;
+    border-radius:8px;
+    border-width: 3px;
+    border-color: rgb(204, 204,204);
+    border-block-start-style: groove;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:9px 22px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+#close_hotel:hover, #close_flights:hover {
+    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color:#474745;
+}
+#close_hotel:active, #close_flights:active {
     position:relative;
     top:1px;
 }
