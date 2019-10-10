@@ -37,6 +37,7 @@ Once events are selected, the application will allow the user to purchase ticket
 * Foursquare Places
 * Dark Sky Weather API
 * Google Maps
+* Countryflags.io
 ---
 
 

@@ -130,6 +130,7 @@ function searchBandsInTownVenue(artist) {
       let btnPlaneTickets = $("<button>");
       tdPlaneTicket.append(btnPlaneTickets);
       btnPlaneTickets.attr("class", "btn btn-primary go-trip");
+      btnPlaneTickets.attr("id", "button1");
       btnPlaneTickets.attr("data-city", cityData);
       btnPlaneTickets.attr("data-region", region);
       btnPlaneTickets.attr("data-date", response[i].datetime);
@@ -144,6 +145,7 @@ function searchBandsInTownVenue(artist) {
         buyTicket.attr("href", response[i].offers[0].url)
         buyTicket.attr("target", "_blank")
         buyTicket.addClass("btn btn-success text-white");
+        buyTicket.attr("id", "button2");
         buyTicket.text("Buy Show Tickets");
         tdTicket.append(buyTicket);
       }

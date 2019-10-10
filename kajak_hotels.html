@@ -1,6 +1,58 @@
-<div class="card-body" id="ar_info_hotel">
-    <div class="p-3">
-        <button class="btn btn-primary" id="book_htl" type="submit">Book Hotel</button>
-        
-    </div>
+<div class="card-body" id="ar_info_plane">
+    <div class="p-3" id="hotel-info">
+            <h5>Book your hotel in <span id="city_hotel"></span></h5>
+            <form id="plane_form">
+        <div class="form-group">
+            <label for="origin1">To</label>
+            <input type="text" class="form-control" id="destination2" placeholder="" readonly>
+        </div>
+            <div class="form-group">
+                <label for="origin1">Check-in Date</label>
+                <input type="text" class="form-control" id="checkIn" placeholder="" readonly>
+            </div>
+            <div class="form-group">
+                    <label for="adults">How Many Days Are You Staying?</label>
+                    <select class="form-control" id="days" name="days">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                            <label for="adults">Adults</label>
+                            <select class="form-control" id="adultsH" name="adultsH">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                    </div>
+                    <div class="col-md-6">
+                            <label for="bags">Rooms</label>
+                            <select class="form-control" id="rooms" name="rooms">
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                </div>
+                
+            </div>
+           
+        </form>
+        <!-- <button class="btn btn-primary" id="book_htl" type="submit">Book Hotel</button> -->
+        <button class="btn btn-primary" id="book_htl" data-toggle="modal"
+        data-target="#get-plane-tickets">Book Hotel Room</button>
 </div>
+
+<div class="p-3 text-center" id="hotel-results" style="display: none;">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+            <h2 class=" my-5">Searching hotels...</h2>
+            <div class="spinner-grow my-5" role="status" id="loading" style="margin: 0 auto">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
