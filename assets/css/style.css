@@ -17,6 +17,7 @@ section {
     min-width: 100%;
     min-height: 100%;
 }
+
 .dark-opacity-05 {
     background: #00000050;
 }
@@ -88,21 +89,22 @@ section {
 .main {
     position: relative;
     background-color: #000;
-    background: linear-gradient(45deg, rgb(0, 0, 0),rgb(110, 110, 110),#010);
-  }
-  section {
-    padding: 1em;
-  }
-  
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(110, 110, 110), #010);
+}
 
-  form{
-      position: relative;
-      z-index: 2;
-      /* cursor: none; */
-  }
-  .cursor-box {
-      cursor: none;
-      position: relative;
+section {
+    padding: 1em;
+}
+
+form {
+    position: relative;
+    z-index: 2;
+    /* cursor: none; */
+}
+
+.cursor-box {
+    cursor: none;
+    position: relative;
     width: 300px;
     height: 300px;
     position: absolute;
@@ -110,16 +112,17 @@ section {
     z-index: 1;
     border-radius: 50%;
     opacity: .85;
-  }
-  .cursor-box-child {
-      cursor: none;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        border-radius: 50%;
-        border: 0;
-        box-shadow: inset 0px 0px 200px 75px rgba(237, 238, 206, 0.5);
-      }
+}
+
+.cursor-box-child {
+    cursor: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 50%;
+    border: 0;
+    box-shadow: inset 0px 0px 200px 75px rgba(237, 238, 206, 0.5);
+}
 
 @keyframes fadein {
     from {
@@ -131,7 +134,7 @@ section {
 }
 
 .card {
-        background: transparent!important;
+    background: transparent!important;
 }
 
 .h-500 {
@@ -145,7 +148,7 @@ section {
 #map {
     height: 100%;
     max-height: 200px
-  }
+}
 
 .nicebox {
     text-align: left;
@@ -158,7 +161,7 @@ section {
     color: #222;
 }
 
-.modal-content{
+.modal-content {
     border: 1px solid #eeeeee;
     border-radius: 6px;
     box-shadow: 0 0 9px #333;
@@ -167,113 +170,121 @@ section {
 }
 
 .modal-header {
-    background-color:#eee;
+    background-color: #eee;
 }
 
 figure {
     margin: 3em auto;
     width: 368px;
     height: 152px;
-  }
+}
 
 canvas {
     display: block;
     float: right;
     margin-right: 8px;
-  }
-  .flags{
+}
+
+.flags {
     display: block;
     float: right;
     margin-right: 8px;
-    
-  }
+}
+
 /* Styling for Buttons */
 
 #button1 {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
-    background-color:#55bcc9;
-    border-radius:8px;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color: #55bcc9;
+    border-radius: 8px;
+    border-radius: 8px;
     border-width: 3px;
     border-block-start-style: groove;
     border-color: rgb(204, 204, 204);
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 26px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 26px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
+
 #button1:hover {
-    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
-    background-color:#474745;
+    background: linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color: #474745;
 }
+
 #button1:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
 #button2 {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
-    background-color:#fc4445;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color: #fc4445;
+    border-radius: 8px;
     border-width: 3px;
-    border-color: rgb(204, 204,204);
+    border-color: rgb(204, 204, 204);
     border-block-start-style: groove;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 22px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 22px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
+
 #button2:hover {
-    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
-    background-color:#474745;
+    background: linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color: #474745;
 }
+
 #button2:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
 .btn-josh {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
-    background-color:#fc4445;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color: #fc4445;
+    border-radius: 8px;
     border-width: 3px;
-    border-color: rgb(204, 204,204);
+    border-color: rgb(204, 204, 204);
     border-block-start-style: groove;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 22px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
-.btn-josh:hover {
-    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
-    background-color:#474745;
-    color:#ffffff;
-}
-.btn-josh:active {
-    position:relative;
-    top:1px;
-    color:#ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 22px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
 
-input[type=text], input[type=number], select  {
-    box-shadow: inset  0px 0px 1px 1px #276873;
+.btn-josh:hover {
+    background: linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color: #474745;
+    color: #ffffff;
+}
+
+.btn-josh:active {
+    position: relative;
+    top: 1px;
+    color: #ffffff;
+}
+
+input[type=text], input[type=number], select {
+    box-shadow: inset 0px 0px 1px 1px #276873;
 }
 
 input[type=text]:focus, select:focus {
@@ -282,200 +293,208 @@ input[type=text]:focus, select:focus {
 
 input[type=text]:hover, select:hover {
     box-shadow: inset 0px 0px 10px 4px #276873;
-  }
-  option{
+}
+
+option {
     background: #E0F7FA;
-    box-shadow:  0px 0px 10px 4px #276873;
-  }
+    box-shadow: 0px 0px 10px 4px #276873;
+}
 
 #main_search {
-
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #3feee6 5%, #474745 100%);
-    background-color:#3feee6;
-    border-radius:8px;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #3feee6 5%, #474745 100%);
+    background-color: #3feee6;
+    border-radius: 8px;
+    border-radius: 8px;
     border-width: 3px;
     border-block-start-style: groove;
     border-color: rgb(204, 204, 204);
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 26px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
 
 #main_search:hover {
-    background:linear-gradient(to bottom, #474745 5%, #3feee6 100%);
-    background-color:#474745;
+    background: linear-gradient(to bottom, #474745 5%, #3feee6 100%);
+    background-color: #474745;
 }
+
 #main_search:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
+
 #navbar_search {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #3feee6 5%, #474745 100%);
-    background-color:#3feee6;
+    background: linear-gradient(to bottom, #3feee6 5%, #474745 100%);
+    background-color: #3feee6;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-width: 1px;
     border-top-width: 1px;
     border-right-width: 1px;
     border-color: rgb(204, 204, 204);
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
 
 #navbar_search:hover {
-    background:linear-gradient(to bottom, #474745 5%, #3feee6 100%);
-    background-color:#474745;
-}
-#navbar_search:active {
-    position:relative;
-    top:1px;
+    background: linear-gradient(to bottom, #474745 5%, #3feee6 100%);
+    background-color: #474745;
 }
 
+#navbar_search:active {
+    position: relative;
+    top: 1px;
+}
 
 #pln_tkts {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
-    background-color:#fc4445;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color: #fc4445;
+    border-radius: 8px;
     border-width: 3px;
-    border-color: rgb(204, 204,204);
+    border-color: rgb(204, 204, 204);
     border-block-start-style: groove;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 22px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 22px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
+
 #pln_tkts:hover {
-    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
-    background-color:#474745;
+    background: linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color: #474745;
 }
+
 #pln_tkts:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
 #book_htl {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
-    background-color:#55bcc9;
-    border-radius:8px;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color: #55bcc9;
+    border-radius: 8px;
+    border-radius: 8px;
     border-width: 3px;
     border-block-start-style: groove;
     border-color: rgb(204, 204, 204);
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 26px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 26px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
+
 #book_htl:hover {
-    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
-    background-color:#474745;
+    background: linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color: #474745;
 }
+
 #book_htl:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
 #got-to-kayak, #got-to-kajak {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
-    background-color:#55bcc9;
-    border-radius:8px;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #55bcc9 5%, #474745 100%);
+    background-color: #55bcc9;
+    border-radius: 8px;
+    border-radius: 8px;
     border-width: 3px;
     border-block-start-style: groove;
     border-color: rgb(204, 204, 204);
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 26px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
-}
-#got-to-kayak:hover, #got-to-kajak:hover {
-    background:linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
-    background-color:#474745;
-}
-#got-to-kayak:active, #got-to-kajak:active {
-    position:relative;
-    top:1px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 26px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
 
+#got-to-kayak:hover, #got-to-kajak:hover {
+    background: linear-gradient(to bottom, #474745 5%, #55bcc9 100%);
+    background-color: #474745;
+}
+
+#got-to-kayak:active, #got-to-kajak:active {
+    position: relative;
+    top: 1px;
+}
 
 #close_hotel, #close_flights {
     box-shadow: 0px 10px 14px -7px #276873;
-    background:linear-gradient(to bottom, #fc4445 5%, #474745 100%);
-    background-color:#fc4445;
-    border-radius:8px;
+    background: linear-gradient(to bottom, #fc4445 5%, #474745 100%);
+    background-color: #fc4445;
+    border-radius: 8px;
     border-width: 3px;
-    border-color: rgb(204, 204,204);
+    border-color: rgb(204, 204, 204);
     border-block-start-style: groove;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:16px;
-    font-weight:bold;
-    padding:9px 22px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 22px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
 }
+
 #close_hotel:hover, #close_flights:hover {
-    background:linear-gradient(to bottom, #474745 5%, #fc4445 100%);
-    background-color:#474745;
+    background: linear-gradient(to bottom, #474745 5%, #fc4445 100%);
+    background-color: #474745;
 }
+
 #close_hotel:active, #close_flights:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
-
-#lineDrawing{
-width: 450px;
-text-align: center;
-line-height: 5px;
-
+#lineDrawing {
+    width: 450px;
+    text-align: left;
+    line-height: 5px;
 }
 
-.introLine{
-    padding-left:60px;
+.introLine {
+    padding-left: 60px;
 }
-#svgGroup{
+
+#svgGroup {
     width: 300px;
+
 }
 
 .my-path {
-    fill:none;
-    stroke:#ffffff;
-    stroke-width:2;
-  }
-
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: .5;
+}
