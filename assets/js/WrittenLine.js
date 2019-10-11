@@ -6,9 +6,9 @@ $(document).ready(function(){
         strokeDashoffset: [anime.setDashoffset, 0],
         easing: 'easeInOutSine',
         duration: 3500,
-        delay: function(el, i) { return i * 350 },
+        delay: function(el, i) { return i * 400 },
         direction: 'alternate',
-        loop: true
+        loop: false
     });
     
 });
