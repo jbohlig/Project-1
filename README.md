@@ -54,20 +54,16 @@ Once events are selected, the application will allow the user to purchase ticket
 * Base HTML - Irina
 * Main page layout - Irina/Josh
 * AnimeJS - Kayro
+* CSS styling - Kayro/Irina 
 * Bandsintown/LastFM API Integration - Irina
-* Kajak API Integration - John
-* DB setup - John
----
-
-### Javascript - future breakdown based on functions needed
+* Kajak Flight/Hotel API Integration - Josh/Irina
+* Darksky, Googlemaps, country flag, foursquare API - Irina
 
 ---
 
 
 ### Bonus content:
-* Authentication - time permitting
-* Db integrations, John/Kayro
-* Spotify API to play selected artist music
+* Mobile responsive
 ---
 
-_September 26th - October 10th, 2019_
+_10/10/2019
