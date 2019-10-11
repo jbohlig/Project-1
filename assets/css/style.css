@@ -490,11 +490,29 @@ option {
 
 #svgGroup {
     width: 300px;
-
 }
 
 .my-path {
     fill: none;
     stroke: #ffffff;
     stroke-width: .5;
+}
+
+@media screen and (max-width: 600px) {
+
+    #svgGroup{
+    margin-left:0px;
+    }
+
+    .lines {
+        float: left;
+    }
+    #artist_input {
+        font-size: 8px;
+        padding: 20px;
+        width: 450px;
+    }
+    #main_search {
+        margin-left: 150px;
+    }
 }
